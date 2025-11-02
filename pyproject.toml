@@ -1,7 +1,35 @@
 [project]
 name = "ign-inf-unlearning"
 version = "0.1.0"
-description = "Add your description here"
+description = "Activation extraction and analysis for language model unlearning"
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = []
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.30.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "tqdm>=4.65.0",
+    "dataset>=1.6.2",
+    "datasets>=4.1.1",
+    "accelerate>=1.10.1",
+    "jupyter>=1.1.1",
+    "scikit-learn>=1.6.1",
+    "matplotlib>=3.9.4",
+    "seaborn>=0.13.2",
+    "dotenv>=0.9.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.3.0",
+    "black>=23.0.0",
+    "ruff>=0.0.270",
+]
+
+[project.scripts]
+extract-activations = "ign_inf_unlearning.scripts.extract_activations:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
